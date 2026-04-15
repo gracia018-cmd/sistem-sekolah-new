@@ -7,7 +7,7 @@ use App\Core\Database;
 class Student extends Database
 {
 
-    protected $table = 'student';
+    protected $table = 'students';
 
     // Fungsi Untuk Menampilkan Daftar Siswa
     public function getStudents()

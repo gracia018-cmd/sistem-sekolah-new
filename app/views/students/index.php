@@ -6,7 +6,7 @@
     </div>
     <!-- Card Header End -->
 
-    <!-- Card Content Start -->
+    <!-- Card Header Start -->
     <div class="bg-white rounded-lg shadow">
         <table class="w-full">
             <thead class="bg-gray-200">
@@ -16,10 +16,36 @@
                     <th class="px-4 py-2 text-left">Kelas</th>
                     <th class="px-4 py-2 text-left">NIS</th>
                     <th class="px-4 py-2 text-left">No Telepon</th>
-                    <th class="px-4 py-2">Aksi</th>
+                    <th class="px-4 py-2 ">Aksi</th>
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($students as $index => $student): ?>
+                    <tr>
+                    <td class="px-4 py-2 text-left">
+                        <?= $index + 1 ?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['name'] ?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['class'] ?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['nis']?>
+                    </td>
+                    <td class="px-4 py-2 text-left">
+                        <?= $student['phone_number']?>
+                    </td>
+                    <td class="px-4 py-2">
+                        <div class="flex justify-center items-center gap-4">
+                            <a href="/students/<?= $student['id']?>" class="text-green-500">Detail</a>
+                            <a href="/students/<?= $student['id']?>/edit" class="text-yellow-500">Edit</a>
+                            <a href="" class="text-red-500">Hapus</a>
+                        </div>
+                    </td>
+                </tr>    
+                <?php endforeach?>    
                 <tr>
                     <td class="px-4 py-2 text-left">1</td>
                     <td class="px-4 py-2 text-left">Andi</td>
@@ -37,5 +63,5 @@
             </tbody>
         </table>
     </div>
-    <!-- Card Content End -->
+    <!-- card Header End -->
 </div>
